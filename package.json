@@ -1,0 +1,20 @@
+{
+  "name": "nathalie-m",
+  "version": "1.0.0",
+  "description": "nathalie-m new website",
+  "main": ".eleventy.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armandsalle/nathalie.git"
+  },
+  "author": "Armand Salle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/armandsalle/nathalie/issues"
+  },
+  "homepage": "https://github.com/armandsalle/nathalie#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}
