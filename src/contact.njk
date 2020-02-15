@@ -3,26 +3,27 @@ title: nathalie.m - Programmes de mentorat et Développement des Ressources Huma
 subtitle: Contact
 description: Ingénieur en mentorat et spécialiste de l’engagement des salariés.
 layout: "default-layout.njk"
+slug: /contact
 ---
 
-<section class="model-1 reveal section" id="contact">
-    <div class="content reveal-1">
-        <div class="text reveal-2">
+<section class="model-1 section" id="contact">
+    <div class="content">
+        <div class="text">
             {% getHtml contact.contenu %}
         </div>
         {% if contact.citation %}
-            <div class="citation reveal-3">
+            <div class="citation">
                 <h3>{{ contact.citation }}</h3>
                 {% if contact.auteur %}
-                    <p class="citation__auteur reveal-4">{{ contact.auteur }}</p>
+                    <p class="citation__auteur">{{ contact.auteur }}</p>
                 {% endif %}
             </div>
         {% endif %}
     </div>
-    <div class="images reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="477.063" height="567.185" viewBox="0 0 477.063 567.185" class="svg reveal-3">
+    <div class="images">
+        <svg xmlns="http://www.w3.org/2000/svg" width="477.063" height="567.185" viewBox="0 0 477.063 567.185" class="svg">
             <path class="a" d="M2769.477,1427.091s-193.623-63.674-276.322,0c-48.542,37.375-308.8,280.928-150,372.461s125.932,214.671,268.737,146.88,157.58-163.128,157.58-163.128Z" transform="translate(-2292.413 -1398.792)"/>
         </svg>
-        <img src="{{ contact.image.fields.file.url }}" alt="{{ contact.image.fields.title }}" class="reveal-4"/>
+        <img src="http:{{ contact.image.fields.file.url }}" alt="{{ contact.image.fields.title }}"/>
     </div>
 </section>

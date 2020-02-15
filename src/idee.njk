@@ -3,33 +3,34 @@ title: nathalie.m - Programmes de mentorat et Développement des Ressources Huma
 subtitle: Idée
 description: Ingénieur en mentorat et spécialiste de l’engagement des salariés.
 layout: "default-layout.njk"
+slug: /idee
 ---
 
-<section class="model-1 reveal section" id="idee">
-    <div class="content reveal-1">
-        <div class="text reveal-2">
+<section class="model-1 section" id="idee">
+    <div class="content">
+        <div class="text">
             {% getHtml idee.contenu %}
         </div>
         {% if idee.citation %}
-            <div class="citation reveal-3">
+            <div class="citation">
                 <h3>{{ idee.citation }}</h3>
                 {% if idee.auteur %}
-                    <p class="citation__auteur reveal-4">{{ idee.auteur }}</p>
+                    <p class="citation__auteur">{{ idee.auteur }}</p>
                 {% endif %}
             </div>
         {% endif %}
-        <div class="slider reveal-3">
+        <div class="slider">
             {% for item in slideridee.image %}
                 <div class="slide">
-                    <img src="{{item.fields.file.url}}" alt="{{item.fields.title}}"/>
+                    <img src="http:{{item.fields.file.url}}" alt="{{item.fields.title}}"/>
                 </div>
             {% endfor %}
         </div>
     </div>
-    <div class="images reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="395.257" height="559.513" viewBox="0 0 395.257 559.513" class="svg reveal-3" >
+    <div class="images">
+        <svg xmlns="http://www.w3.org/2000/svg" width="395.257" height="559.513" viewBox="0 0 395.257 559.513" class="svg" >
             <path class="a" d="M2822.506,1429.386s-192.553-68.321-289.971,0-133.113,200.072-82.088,327.1,134.32,253.089,286.186,181c79.158-41.809,85.874-145.938,85.874-145.938Z" transform="translate(-2427.249 -1399.021)"/>
         </svg>
-        <img src="{{ idee.image.fields.file.url }}" alt="{{ idee.image.fields.title }}" class="reveal-4"/>
+        <img src="http:{{ idee.image.fields.file.url }}" alt="{{ idee.image.fields.title }}" class=""/>
     </div>
 </section>

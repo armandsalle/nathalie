@@ -3,11 +3,12 @@ title: nathalie.m - Programmes de mentorat et Développement des Ressources Huma
 subtitle: Plus d'infos
 description: Ingénieur en mentorat et spécialiste de l’engagement des salariés.
 layout: "default-layout.njk"
+slug: /infos
 ---
 
-<section class="model-3 reveal section" id="infos">
-    <div class="content reveal-1">
-        <div class="toggle reveal-2">
+<section class="model-3 section" id="infos">
+    <div class="content">
+        <div class="toggle">
             <div class="toggle__links">
                 <a href="#consultante" class="toggle__link active">Consultante</a>
                 <a href="#experte" class="toggle__link">Experte</a>
@@ -29,8 +30,8 @@ layout: "default-layout.njk"
                 </div>
             </div>
         </div>
-        <h5 class="reveal-3">AVIS</h5>
-        <div class="avis reveal-4">
+        <h5>AVIS</h5>
+        <div class="avis slider-avis">
             {% for item in infos.avis %}
                 <div class="avis-slide">
                     <p>{{item.fields.contenu.content[0].content[0].value}}</p>
@@ -44,10 +45,10 @@ layout: "default-layout.njk"
             {% endfor %}
         </div>
     </div>
-    <div class="images reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="396.194" height="507.006" viewBox="0 0 396.194 507.006" class="svg reveal-3">
+    <div class="images">
+        <svg xmlns="http://www.w3.org/2000/svg" width="396.194" height="507.006" viewBox="0 0 396.194 507.006" class="svg">
             <path class="a" d="M2672.207,1379.525s-204.883-87.97-305.985-14.776-125.841,250.764-29.695,362.862,335.68,115.046,335.68,115.046Z" transform="translate(-2276.013 -1335.651)" />
         </svg>
-        <img src="{{ infos.image.fields.file.url }}" alt="{{ infos.image.fields.title }}" class="reveal-4"/>
+        <img src="http:{{ infos.image.fields.file.url }}" alt="{{ infos.image.fields.title }}"/>
     </div>
 </section>
