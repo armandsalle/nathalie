@@ -12,40 +12,25 @@
             <nav class="nav">
                 <div class="logo-section reveal">
                     <a href="/" class="nav_link_logo">
-                        <img src="" alt="logo nathalie-m" class="logo mr-medium reveal-2"/>
+                        <img src="{{ nav.logo.fields.file.url }}" alt="logo nathalie-m" class="logo mr-medium reveal-2"/>
                         <div class="logo-title reveal-3">
-                            <p class="p p-bold p-logo">nathalie-m</p>
-                            <p class="p p-light p-logo-sub">nathalie milcent</p>
+                            <p class="p p-bold p-logo">{{ nav.titre }}</p>
+                            <p class="p p-light p-logo-sub">{{ nav.sousTitre }}</p>
                         </div>
                     </a>
                 </div>
                 <div class="link-section reveal">
-                    <a href="#" class="a link-section__a reveal-2" target="_blank">Linkedin.</a>
-                    <a href="#" class="a link-section__a reveal-3" target="_blank">Téléphone</a>
-                    <a href="#" class="a link-section__a reveal-4">Mail</a>
+                    <a href="{{ nav.liens.nav1.lien }}" class="a link-section__a reveal-2" target="_blank">{{ nav.liens.nav1.text }}</a>
+                    <a href="{{ nav.liens.nav2.lien }}" class="a link-section__a reveal-3" target="_blank">{{ nav.liens.nav2.text }}</a>
+                    <a href="{{ nav.liens.nav3.lien }}" class="a link-section__a reveal-4">{{ nav.liens.nav3.text }}</a>
                 </div>
             </nav>
 
             <section class="hero reveal">
                 <div class="hero__content reveal-1">
-                    <h1 class="h1 mb-big reveal-2">Ingénieur en mentorat et spécialiste de l’engagement des salariés.</h1>
+                    <h1 class="h1 mb-big reveal-2">{{ header.titre }}</h1>
                     <div class="p p-hero mb-big reveal-3">
-                        <p>
-                            <b>Si vous vous posez une ou plusieurs de ces questions, alors vous êtes au bon endroit ! </b>
-                        </p>
-                        <p>- Comment favoriser le transfert de connaissance et le partage d’expérience (ex. enjeu de départs à la retraite) ? </p>
-                        <p>- Comment conserver des savoirs en aidant les collaborateurs à se projeter dans l’entreprise ? </p>
-                        <p>- Comment faciliter l’intégration en poste (embauche ou mobilité interne) ? </p>
-                        <p>- Comment accélérer l’évolution dans l’entreprise de certaines populations (ex. jeunes diplômés, hauts potentiels, femmes, etc.) ? </p>
-                        <p>- Comment augmenter la collaboration inter-services ? </p>
-                        <p>- Comment faire le pont entre différentes générations ? </p>
-                        <p>- Comment valoriser les mentors (experts, senior leaders…) ? </p>
-                        <p>- Comment reconnaître les plus performants ?</p>
-                        <p></p>
-                        <p>
-                            <b>Le mentorat est un moyen de développement et d’apprentissage, basé sur une relation interpersonnelle volontaire, sans lien hiérarchique et confidentielle.</b>
-                        </p>
-                        <p></p>
+                        {% getHtml header.contenu %}
                     </div>
                     <div class="hero__content__btn">
                         <a href="/#links" class="a a-btn a-primary mr-medium reveal-4 btn-decouvrir">Découvrir</a>
@@ -53,7 +38,7 @@
                     </div>
                 </div>
                 <div class="hero__img reveal-5">
-                    <img src="" alt="#" class="mt-extra"/>
+                    <img src="{{ header.image.fields.file.url }}" alt="{{ header.image.fields.title }}" class="mt-extra"/>
                 </div>
             </section>
         </header>

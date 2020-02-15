@@ -1,5 +1,11 @@
-module.exports = elevetyConfig => {
-  elevetyConfig.addPassthroughCopy("src/_assets")
+const c = require("@contentful/rich-text-html-renderer");
+
+module.exports = eleventyConfig => {
+  eleventyConfig.addPassthroughCopy("src/_assets");
+
+  eleventyConfig.addShortcode("getHtml", data => {
+    return c.documentToHtmlString(data);
+  });
 
   return {
     passthroughFileCopy: true,
@@ -9,5 +15,5 @@ module.exports = elevetyConfig => {
       includes: "includes",
       data: "_data"
     }
-  }
-}
+  };
+};

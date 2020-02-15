@@ -8,24 +8,21 @@ layout: "default-layout.njk"
 <section class="model-1 reveal section" id="methodes">
     <div class="content reveal-1">
         <div class="text reveal-2">
-            <p>Vous seriez peut être tenté de mettre en place un programme de mentorat informel dans votre organisation après avoir pris connaissance de son importance et de ses avantages. </p>
-            <p>En réalité, cela ne fonctionne pas comme ça ! Bien que le mentorat informel puisse sembler plus rapide et moins cher, il s'apparente plutôt à du parrainage, et vous fera passer à côté de trésors de richesses. Sans véritable objectif de progrès, ni structuration, cela risque de s’essouffler. </p>
-            <p>
-                <b>Le plus efficace sera donc le développement d’un programme de mentorat officiel </b>dans votre organisation, qui vous permettra d’établir des objectifs clairs, d’évaluer les résultats et de fournir le soutien nécessaire grâce à la coordination et l'animation organisées par l'ingénieur en mentorat.</p>
-            <p>En communicant sur vos programmes de mentorat, vous renforcerez également votre pouvoir d'attraction.</p>
-            <p></p>
-            <p>&nbsp;</p>
-            <p></p>
+            {% getHtml methodes.contenu %}
         </div>
-        <div class="citation reveal-3" v-if="methodes.fields.citation">
-            <h3></h3>
-            <p class="citation__auteur reveal-4" v-if="methodes.fields.auteur"></p>
-        </div>
+        {% if methodes.citation %}
+            <div class="citation reveal-3">
+                <h3>{{ methodes.citation }}</h3>
+                {% if methodes.auteur %}
+                    <p class="citation__auteur reveal-4">{{ methodes.auteur }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
     <div class="images reveal">
         <svg xmlns="http://www.w3.org/2000/svg" width="475.704" height="526.286" viewBox="0 0 475.704 526.286" class="svg reveal-3">
             <path class="a" d="M2751.667,1427.755s-179.406-37.8-259.572-7.431-216.324,111.562-216.132,277.988c2.938,208.363,176.077,277.105,309.282,213.872s166.422-193.841,166.422-193.841Z" transform="translate(-2275.963 -1408.517)"/>
         </svg>
-        <img src="#" alt="" class="reveal-4"/>
+        <img src="{{ methodes.image.fields.file.url }}" alt="{{ methodes.image.fields.title }}" class="reveal-4"/>
     </div>
 </section>
