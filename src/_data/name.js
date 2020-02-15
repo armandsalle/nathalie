@@ -1,1 +1,1 @@
-module.exports = () => "Armand"
+module.exports = () => "Armand le bosse"
