@@ -5,40 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{{ title }}</title>
         <meta data-hid="description" name="description" content="{{ description }}">
+        <link rel="stylesheet" href="/_assets/css/slick.css"/>
         <link rel="stylesheet" href="/_assets/css/main.css"/>
     </head>
     <body data-barba="wrapper">
         <header class="header">
             <nav class="nav">
-                <div class="logo-section reveal">
+                <div class="logo-section">
                     <a href="/" class="nav_link_logo">
-                        <img src="{{ nav.logo.fields.file.url }}" alt="logo nathalie-m" class="logo mr-medium reveal-2"/>
-                        <div class="logo-title reveal-3">
+                        <img src="http:{{ nav.logo.fields.file.url }}" alt="logo nathalie-m" class="logo mr-medium"/>
+                        <div class="logo-title">
                             <p class="p p-bold p-logo">{{ nav.titre }}</p>
                             <p class="p p-light p-logo-sub">{{ nav.sousTitre }}</p>
                         </div>
                     </a>
                 </div>
-                <div class="link-section reveal">
-                    <a href="{{ nav.liens.nav1.lien }}" class="a link-section__a reveal-2" target="_blank">{{ nav.liens.nav1.text }}</a>
-                    <a href="{{ nav.liens.nav2.lien }}" class="a link-section__a reveal-3" target="_blank">{{ nav.liens.nav2.text }}</a>
-                    <a href="{{ nav.liens.nav3.lien }}" class="a link-section__a reveal-4">{{ nav.liens.nav3.text }}</a>
+                <div class="link-section">
+                    <a href="{{ nav.liens.nav1.lien }}" class="a link-section__a" target="_blank">{{ nav.liens.nav1.text }}</a>
+                    <a href="{{ nav.liens.nav2.lien }}" class="a link-section__a" target="_blank">{{ nav.liens.nav2.text }}</a>
+                    <a href="{{ nav.liens.nav3.lien }}" class="a link-section__a">{{ nav.liens.nav3.text }}</a>
                 </div>
             </nav>
 
-            <section class="hero reveal">
-                <div class="hero__content reveal-1">
-                    <h1 class="h1 mb-big reveal-2">{{ header.titre }}</h1>
-                    <div class="p p-hero mb-big reveal-3">
+            <section class="hero">
+                <div class="hero__content">
+                    <h1 class="h1 mb-big">{{ header.titre }}</h1>
+                    <div class="p p-hero mb-big">
                         {% getHtml header.contenu %}
                     </div>
                     <div class="hero__content__btn">
-                        <a href="/#links" class="a a-btn a-primary mr-medium reveal-4 btn-decouvrir">Découvrir</a>
-                        <a href="/contact" class="a a-btn a-secondary reveal-5 btn-contact">Contacter</a>
+                        <a href="/#links" class="a a-btn a-primary mr-medium btn-decouvrir">Découvrir</a>
+                        <a href="/contact" class="a a-btn a-secondary btn-contact">Contacter</a>
                     </div>
                 </div>
-                <div class="hero__img reveal-5">
-                    <img src="{{ header.image.fields.file.url }}" alt="{{ header.image.fields.title }}" class="mt-extra"/>
+                <div class="hero__img">
+                    <img src="http:{{ header.image.fields.file.url }}" alt="{{ header.image.fields.title }}" class="mt-extra"/>
                 </div>
             </section>
         </header>
@@ -47,13 +48,8 @@
             <div class="links" id="links">
                 <h2 class="change-link">{{subtitle}}</h2>
                 <div class="links__nav">
-                    <a class="link-nav active" href="/">Storytelling.</a>
-                    <a class="link-nav" href="/sens">Sens.</a>
-                    <a class="link-nav" href="/idee">Idée.</a>
-                    <a class="link-nav" href="/benefices">Bénéfices.</a>
-                    <a class="link-nav" href="/methodes">Méthodes.</a>
-                    <a class="link-nav" href="/infos">Plus d'infos.</a>
-                    <a class="link-nav" href="/perimetre">Périmètre.</a>
-                    <a class="link-nav" href="/contact">Contact.</a>
+                    {% for link in slugs %}
+                        <a class="link-nav {% if slug === link.slug %} active {% endif %}" href="{{ link.slug }}">{{ link.title }}</a>
+                    {% endfor %}
                 </div>
             </div>

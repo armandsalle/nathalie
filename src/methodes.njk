@@ -3,26 +3,27 @@ title: nathalie.m - Programmes de mentorat et Développement des Ressources Huma
 subtitle: Méthodes
 description: Ingénieur en mentorat et spécialiste de l’engagement des salariés.
 layout: "default-layout.njk"
+slug: /methodes
 ---
 
-<section class="model-1 reveal section" id="methodes">
-    <div class="content reveal-1">
-        <div class="text reveal-2">
+<section class="model-1 section" id="methodes">
+    <div class="content">
+        <div class="text">
             {% getHtml methodes.contenu %}
         </div>
         {% if methodes.citation %}
-            <div class="citation reveal-3">
+            <div class="citation">
                 <h3>{{ methodes.citation }}</h3>
                 {% if methodes.auteur %}
-                    <p class="citation__auteur reveal-4">{{ methodes.auteur }}</p>
+                    <p class="citation__auteur">{{ methodes.auteur }}</p>
                 {% endif %}
             </div>
         {% endif %}
     </div>
-    <div class="images reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="475.704" height="526.286" viewBox="0 0 475.704 526.286" class="svg reveal-3">
+    <div class="images">
+        <svg xmlns="http://www.w3.org/2000/svg" width="475.704" height="526.286" viewBox="0 0 475.704 526.286" class="svg">
             <path class="a" d="M2751.667,1427.755s-179.406-37.8-259.572-7.431-216.324,111.562-216.132,277.988c2.938,208.363,176.077,277.105,309.282,213.872s166.422-193.841,166.422-193.841Z" transform="translate(-2275.963 -1408.517)"/>
         </svg>
-        <img src="{{ methodes.image.fields.file.url }}" alt="{{ methodes.image.fields.title }}" class="reveal-4"/>
+        <img src="http:{{ methodes.image.fields.file.url }}" alt="{{ methodes.image.fields.title }}"/>
     </div>
 </section>

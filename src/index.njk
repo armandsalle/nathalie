@@ -3,26 +3,27 @@ title: nathalie.m - Programmes de mentorat et Développement des Ressources Huma
 subtitle: Storytelling
 description: Ingénieur en mentorat et spécialiste de l’engagement des salariés.
 layout: "default-layout.njk"
+slug: /
 ---
 
-<section class="model-1 reveal section" id="storytelling">
-    <div class="content reveal-1">
-        <div class="text reveal-2">
+<section class="model-1 section" id="storytelling">
+    <div class="content">
+        <div class="text">
             {% getHtml storytelling.contenu %}
         </div>
         {% if storytelling.citation %}
-            <div class="citation reveal-3">
+            <div class="citation">
                 <h3>{{ storytelling.citation }}</h3>
                 {% if storytelling.auteur %}
-                    <p class="citation__auteur reveal-4">{{ storytelling.auteur }}</p>
+                    <p class="citation__auteur">{{ storytelling.auteur }}</p>
                 {% endif %}
             </div>
         {% endif %}
     </div>
-    <div class="images images-storytelling reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="414.547" height="566.492" viewBox="0 0 414.547 566.492" class="svg reveal-3">
+    <div class="images images-storytelling">
+        <svg xmlns="http://www.w3.org/2000/svg" width="414.547" height="566.492" viewBox="0 0 414.547 566.492" class="svg">
             <path class="a" d="M2766.167,1418.638s-58.559-25.111-135.625,20.911c-45.235,27.014-105.289,105.34-181.358,103.807-205.591-4.143-39.348,295.982,71.343,388.079s245.64,20.026,245.64,20.026Z" transform="translate(-2351.62 -1411.8)"/>
         </svg>
-        <img src="{{ storytelling.image.fields.file.url }}" alt="{{ storytelling.image.fields.title }}" class="reveal-4"/>
+        <img src="http:{{ storytelling.image.fields.file.url }}" alt="{{ storytelling.image.fields.title }}"/>
     </div>
 </section>

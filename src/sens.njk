@@ -3,26 +3,27 @@ title: nathalie.m - Programmes de mentorat et Développement des Ressources Huma
 subtitle: Sens
 description: Ingénieur en mentorat et spécialiste de l’engagement des salariés.
 layout: "default-layout.njk"
+slug: /sens
 ---
 
-<section class="model-1 reveal section" id="sens">
-    <div class="content reveal-1">
-        <div class="text reveal-2">
+<section class="model-1 section" id="sens">
+    <div class="content">
+        <div class="text">
             {% getHtml sens.contenu %}
         </div>
         {% if sens.citation %}
-            <div class="citation reveal-3">
+            <div class="citation">
                 <h3>{{ sens.citation }}</h3>
                 {% if sens.auteur %}
-                    <p class="citation__auteur reveal-4">{{ sens.auteur }}</p>
+                    <p class="citation__auteur">{{ sens.auteur }}</p>
                 {% endif %}
             </div>
         {% endif %}
     </div>
-    <div class="images reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" width="499" viewBox="0 0 499 499" class="svg reveal-3">
+    <div class="images">
+        <svg xmlns="http://www.w3.org/2000/svg" width="499" viewBox="0 0 499 499" class="svg">
             <path class="a" d="M2911.363,1423.742s-319.553-57.892-427.953,25.912-77.364,200.923-5.645,309.3,179.531,136.262,288.589,122.34,145.009-55.906,145.009-55.906Z" transform="translate(-2412.712 -1404.259)"/>
         </svg>
-        <img src="{{ sens.image.fields.file.url }}" alt="{{ sens.image.fields.title }}" class="reveal-4"/>
+        <img src="http:{{ sens.image.fields.file.url }}" alt="{{ sens.image.fields.title }}"/>
     </div>
 </section>
