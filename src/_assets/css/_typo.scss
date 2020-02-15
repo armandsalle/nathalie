@@ -1,0 +1,119 @@
+.h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    width: 62rem;
+    line-height: 1.2;
+
+    @media only screen and (max-width: 1250px) {
+        width: 50rem;
+        font-size: 3rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+        width: 100%;
+    }
+}
+
+.a,
+.a:link,
+.a:visited {
+    text-decoration: none;
+    color: var(--color-blue);
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+a {
+    color: var(--color-blue);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+ul,
+ol {
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+.a-btn,
+.a-btn:link,
+.a-btn:visited {
+    font-size: 1.4rem;
+    padding: .8rem 1.8rem;
+    border-radius: 50rem;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    border: 2px solid var(--color-blue);
+}
+
+.a-primary,
+.a-primary:link,
+.a-primary:visited {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+}
+
+.a-secondary,
+.a-secondary:link,
+.a-secondary:visited {
+    color: var(--color-blue);
+    background-color: transparent;
+}
+
+.p {
+    color: var(--color-blue);
+    font-weight: 400;
+    font-size: 1.7rem;
+
+    &-bold {
+        font-weight: 700;
+    }
+
+    &-logo {
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    &-light {
+        font-weight: 300;
+    }
+
+    &-logo-sub {
+        font-size: 1.3rem;
+        line-height: 1;
+    }
+
+    &-hero {
+        font-weight: 300;
+        width: 50rem;
+        text-align: justify;
+        font-size: 1.4rem;
+        padding: 1rem 0 1rem 2rem;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--color-yellow);
+            z-index: -1;
+        }
+
+        @media only screen and (max-width: 900px) {
+            width: 100%;
+        }
+    }
+}
+
+a {
+    cursor: pointer;
+}

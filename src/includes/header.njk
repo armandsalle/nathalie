@@ -7,7 +7,7 @@
         <meta data-hid="description" name="description" content="{{ description }}">
         <link rel="stylesheet" href="/_assets/css/main.css"/>
     </head>
-    <body>
+    <body data-barba="wrapper">
         <header class="header">
             <nav class="nav">
                 <div class="logo-section reveal">
@@ -48,8 +48,8 @@
                         <p></p>
                     </div>
                     <div class="hero__content__btn">
-                        <a href="#links" class="a a-btn a-primary mr-medium reveal-4 btn-decouvrir">Découvrir</a>
-                        <a href="#links" class="a a-btn a-secondary reveal-5 btn-contact">Contacter</a>
+                        <a href="/#links" class="a a-btn a-primary mr-medium reveal-4 btn-decouvrir">Découvrir</a>
+                        <a href="/contact" class="a a-btn a-secondary reveal-5 btn-contact">Contacter</a>
                     </div>
                 </div>
                 <div class="hero__img reveal-5">
@@ -58,7 +58,7 @@
             </section>
         </header>
 
-        <main class="main">
+        <main class="main" data-barba="container">
             <div class="links" id="links">
                 <h2 class="change-link">{{subtitle}}</h2>
                 <div class="links__nav">
