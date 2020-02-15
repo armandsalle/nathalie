@@ -141,7 +141,7 @@
     max-width: 78rem;
     margin-top: 3rem;
     // height: auto;
-// width: 78rem;
+    // width: 78rem;
     position: relative;
 
     @media only screen and (max-width: 1250px) {
@@ -164,6 +164,7 @@
         outline: none;
         position: relative;
         width: 100%;
+        height: auto;
 
         @media only screen and (max-width: 900px) {
             padding: 0;
