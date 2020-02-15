@@ -1,0 +1,42 @@
+.model-2 {
+    position: relative;
+    padding-bottom: 5rem;
+
+    & .content {
+        width: 80rem;
+        margin: 0 auto;
+
+        @media only screen and (max-width: 1250px) {
+            width: 70rem;
+        }
+
+        @media only screen and (max-width: 900px) {
+            width: 90%;
+
+        }
+
+        & .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    & .images {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+
+        @media only screen and (max-width: 900px) {
+            display: none;
+        }
+
+        & .svg {
+            height: auto;
+        }
+    }
+}

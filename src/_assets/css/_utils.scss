@@ -1,0 +1,65 @@
+.mt-big {
+    margin-top: 3rem;
+}
+
+.mt-extra {
+    margin-top: 5rem;
+
+    @media only screen and (max-width: 900px) {
+        margin-top: 10rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+        margin-top: 4rem;
+    }
+}
+
+.mt-mega {
+    margin-top: 8rem;
+}
+
+.pt-extra {
+    padding-top: 5rem;
+}
+
+.mb-big {
+    margin-bottom: 3rem;
+}
+
+.mr-medium {
+    margin-right: 2rem;
+}
+
+
+.slick-slide {
+    transition: all ease-in-out 1s;
+    opacity: .2;
+}
+
+.slick-active {
+    opacity: .2;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+.model-3 .avis .slick-list {
+    width: 78rem;
+
+    @media only screen and (max-width: 1250px) {
+        width: 60rem;
+    }
+
+    @media only screen and (max-width: 900px) {
+        width: 90%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        width: 90%;
+    }
+}
+
+.d-none {
+    display: none !important;
+}
