@@ -7,21 +7,29 @@ layout: "default-layout.njk"
 
 <section class="model-1 reveal section" id="idee">
     <div class="content reveal-1">
-        <div class="text reveal-2"></div>
-        <div class="citation reveal-3" v-if="idee.fields.citation">
-            <h3></h3>
-            <p class="citation__auteur reveal-4" v-if="idee.fields.auteur"></p>
+        <div class="text reveal-2">
+            {% getHtml idee.contenu %}
         </div>
-        <div class="slider reveal-3">
-            <div class="slide" v-for="item in sliderIdee">
-                <img src="#" alt=""/>
+        {% if idee.citation %}
+            <div class="citation reveal-3">
+                <h3>{{ idee.citation }}</h3>
+                {% if idee.auteur %}
+                    <p class="citation__auteur reveal-4">{{ idee.auteur }}</p>
+                {% endif %}
             </div>
+        {% endif %}
+        <div class="slider reveal-3">
+            {% for item in slideridee.image %}
+                <div class="slide">
+                    <img src="{{item.fields.file.url}}" alt="{{item.fields.title}}"/>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <div class="images reveal">
         <svg xmlns="http://www.w3.org/2000/svg" width="395.257" height="559.513" viewBox="0 0 395.257 559.513" class="svg reveal-3" >
             <path class="a" d="M2822.506,1429.386s-192.553-68.321-289.971,0-133.113,200.072-82.088,327.1,134.32,253.089,286.186,181c79.158-41.809,85.874-145.938,85.874-145.938Z" transform="translate(-2427.249 -1399.021)"/>
         </svg>
-        <img src="idee.fields.image.fields.file.url" alt="idee.fields.image.fields.title" class="reveal-4"/>
+        <img src="{{ idee.image.fields.file.url }}" alt="{{ idee.image.fields.title }}" class="reveal-4"/>
     </div>
 </section>

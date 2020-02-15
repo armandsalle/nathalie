@@ -8,49 +8,21 @@ layout: "default-layout.njk"
 <section class="model-1 reveal section" id="storytelling">
     <div class="content reveal-1">
         <div class="text reveal-2">
-            <p>
-                <b>Quelques témoignages de mentorés, et de mentors.</b>
-            </p>
-            <p>
-                <b>Mentorée</b>
-            </p>
-            <p>
-                <i>"Le programme m’a permis de rencontrer une mentor avec qui j’ai pu développer mes compétences professionnelles, renforcer ma confiance en tant que professionnelle ainsi qu’établir un regard plus spécifique sur mes enjeux personnels face à ma pratique. Grâce à cette expérience, j’ai décidé de revaloriser mon champ de pratique et aussi de persévérer dans le développement des compétences qui sont plus difficiles pour moi. Une belle façon d’apprendre dans un contexte de confiance. Un grand merci pour ce beau programme!"&nbsp;</i>
-            </p>
-            <p>
-                <b>Mentoré</b>
-            </p>
-            <p>
-                <i>"Mon expérience mentorale s’est avérée un succès sur toute la ligne. J’ai été reçu à chacune de nos rencontres avec chaleur, générosité et professionnalisme. La disponibilité, l’authenticité et l’expérience enrichissante de ma mentor m’ont également aidé à cheminer dans ma démarche professionnelle. Merci!"</i>
-            </p>
-            <p>
-                <b>Mentor(e)</b>
-            </p>
-            <p>
-                <i>"Nous sommes à l’ère de la coopération. J’envie les jeunes professionnels qui ont accès à ces opportunités d’apprentissages plus rapides et basés sur nos expériences . Ces jeunes professionnels m’apprennent à leur tour en témoignant de leur point de vue et de leurs réalités. Quel échange remarquable!"</i>
-            </p>
-            <p>
-                <b>Mentor</b>
-            </p>
-            <p>
-                <i>"Ce fut une expérience très enrichissante. J’ai également beaucoup appris à titre de mentor. Bravo pour votre programme!"</i>
-            </p>
-            <p>
-                <i>Source : </i>
-                <a href="https://www.sqpto.ca/fr/temoignages/">https://www.sqpto.ca/fr/temoignages/</a>
-
-            </p>
-            <p></p>
+            {% getHtml storytelling.contenu %}
         </div>
-        <div class="citation reveal-3" v-if="storytelling.fields.citation">
-            <h3>Le mentorat est un outil puissant qui relie les individus deux à deux pour créer du lien, améliorer le climat interne et booster la performance globale.</h3>
-            <p class="citation__auteur reveal-4" v-if="storytelling.fields.auteur"></p>
-        </div>
+        {% if storytelling.citation %}
+            <div class="citation reveal-3">
+                <h3>{{ storytelling.citation }}</h3>
+                {% if storytelling.auteur %}
+                    <p class="citation__auteur reveal-4">{{ storytelling.auteur }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
     <div class="images images-storytelling reveal">
         <svg xmlns="http://www.w3.org/2000/svg" width="414.547" height="566.492" viewBox="0 0 414.547 566.492" class="svg reveal-3">
             <path class="a" d="M2766.167,1418.638s-58.559-25.111-135.625,20.911c-45.235,27.014-105.289,105.34-181.358,103.807-205.591-4.143-39.348,295.982,71.343,388.079s245.64,20.026,245.64,20.026Z" transform="translate(-2351.62 -1411.8)"/>
         </svg>
-        <img src="#" alt="" class="reveal-4"/>
+        <img src="{{ storytelling.image.fields.file.url }}" alt="{{ storytelling.image.fields.title }}" class="reveal-4"/>
     </div>
 </section>

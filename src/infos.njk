@@ -16,36 +16,38 @@ layout: "default-layout.njk"
             </div>
             <div class="toggle__content">
                 <div id="consultante" class="toggle__item">
-                    <p>Conduite du changement – Accompagnement projets – Animation de Workshops (Vision, Stratégie, Innovation)</p>
+                    <p>{{infos.onglets.consultante}}</p>
                 </div>
                 <div id="experte" class="toggle__item d-none">
-                    <p>Ingénierie du Mentorat – Management de transition</p>
+                    <p>{{infos.onglets.experte}}</p>
                 </div>
                 <div id="formatrice" class="toggle__item d-none">
-                    <p>Développement des Ressources Humaines – Management</p>
+                    <p>{{infos.onglets.formatrice}}</p>
                 </div>
                 <div id="coach" class="toggle__item d-none">
-                    <p>Cadre – Collaborateur – Dirigeant – Manager, Responsable d’équipe</p>
+                    <p>{{infos.onglets.coach}}</p>
                 </div>
             </div>
         </div>
         <h5 class="reveal-3">AVIS</h5>
         <div class="avis reveal-4">
-                <div class="avis-slide" v-for="item in infos.fields.avis">
-                    <p>J'ai rencontré Nathalie en 2018. Elle est humble, intègre et sait s'exprimer aisément, avec clarté et précision. Elle est une personne que l'on écoute avec intérêt et dont les paroles s'imposent. Elle sait voir des choses que nous ne percevons pas, elle m'a rendu fière de qui je suis! Merci.</p>
+            {% for item in infos.avis %}
+                <div class="avis-slide">
+                    <p>{{item.fields.contenu.content[0].content[0].value}}</p>
                     <div class="auteur">
-                        <p>
-                            <b>Josée</b>
-                        </p>
-                        <p>Directrice des Ressources Humaines</p>
+                    <p>
+                        <b>{{ item.fields.nom}}</b>
+                    </p>
+                    <p>{{ item.fields.profession}}</p>
                     </div>
                 </div>
+            {% endfor %}
         </div>
     </div>
     <div class="images reveal">
         <svg xmlns="http://www.w3.org/2000/svg" width="396.194" height="507.006" viewBox="0 0 396.194 507.006" class="svg reveal-3">
             <path class="a" d="M2672.207,1379.525s-204.883-87.97-305.985-14.776-125.841,250.764-29.695,362.862,335.68,115.046,335.68,115.046Z" transform="translate(-2276.013 -1335.651)" />
         </svg>
-        <img src="#" alt="" class="reveal-4"/>
+        <img src="{{ infos.image.fields.file.url }}" alt="{{ infos.image.fields.title }}" class="reveal-4"/>
     </div>
 </section>
