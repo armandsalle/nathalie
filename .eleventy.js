@@ -13,24 +13,6 @@ module.exports = eleventyConfig => {
     assetPath: "/_assets/img"
   });
 
-  // eleventyConfig.addShortcode("imgBase64", data => {
-  //   axios
-  //     .get("http:" + data)
-  //     .then(response => {
-  //       let returnedB64 = Buffer.from(response.data).toString("base64");
-  //       return response;
-  //     })
-  //     .catch(err => console.log(err));
-
-  //   // image2base64(`https:${data}`)
-  //   //   .then(response => {
-  //   //     return response;
-  //   //   })
-  //   //   .catch(error => {
-  //   //     console.log(error); //Fail quietly....
-  //   //   });
-  // });
-
   return {
     passthroughFileCopy: true,
     dir: {

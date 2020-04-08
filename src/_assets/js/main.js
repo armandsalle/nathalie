@@ -12,18 +12,18 @@ const initSliders = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true
-        }
-      }
-    ]
+          dots: true,
+        },
+      },
+    ],
   });
 
   $(".slider-avis").slick({
@@ -37,10 +37,10 @@ const initSliders = () => {
         breakpoint: 900,
         settings: {
           dots: true,
-          arrows: false
-        }
-      }
-    ]
+          arrows: false,
+        },
+      },
+    ],
   });
 };
 
@@ -48,21 +48,21 @@ initSliders();
 
 const toggles = document.querySelectorAll(".toggle__link");
 
-const toggle = e => {
+const toggle = (e) => {
   e.preventDefault();
-  toggles.forEach(link => {
+  toggles.forEach((link) => {
     link.classList.remove("active");
   });
   e.target.classList.add("active");
-  document.querySelectorAll(".toggle__item").forEach(item => {
+  document.querySelectorAll(".toggle__item").forEach((item) => {
     item.classList.add("d-none");
   });
   document.querySelector(e.target.hash).classList.remove("d-none");
 };
 
-toggles.forEach(el => el.addEventListener("click", e => toggle(e)));
+toggles.forEach((el) => el.addEventListener("click", (e) => toggle(e)));
 
-$(".btn-decouvrir").on("click", function() {
+$(".btn-decouvrir").on("click", function () {
   var page = $(this).attr("href");
   var speed = 750;
   $("html, body").animate({ scrollTop: $(page).offset().top }, speed);
@@ -76,24 +76,47 @@ barba.init({
     {
       name: "fade",
       leave({ current, next, trigger }) {
-        return new Promise(resolve => {
+        const body = document.querySelector("body");
+        body.classList.add("no-events");
+
+        return new Promise((resolve) => {
           const tl = gsap.timeline({
             onComplete() {
               current.container.remove();
               resolve();
-            }
+            },
           });
 
-          tl.to(".links", { opacity: 0 }, 0).to(".section", { opacity: 0 }, 0.1);
+          tl.to(".links", { opacity: 0 }, 0).to(
+            ".section",
+            { opacity: 0 },
+            0.1
+          );
         });
       },
       enter({ current, next, trigger }) {
-        return new Promise(resolve => {
+        const links = document.querySelectorAll("a[href]");
+        const cbk = function (e) {
+          if (e.currentTarget.href === window.location.href) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        };
+
+        for (var i = 0; i < links.length; i++) {
+          links[i].addEventListener("click", cbk);
+        }
+
+        const body = document.querySelector("body");
+        body.classList.remove("no-events");
+
+        return new Promise((resolve) => {
           const tl = gsap.timeline({
             onComplete() {
               resolve();
-            }
+            },
           });
+
           initSliders();
 
           if (trigger.classList.contains("btn-contact")) {
@@ -107,7 +130,7 @@ barba.init({
             .from(".section", { opacity: 0 }, 0)
             .to(".section", { opacity: 1 }, 0.1);
         });
-      }
-    }
-  ]
+      },
+    },
+  ],
 });
